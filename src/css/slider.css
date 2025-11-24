@@ -1,0 +1,73 @@
+.container-slider{
+
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center ;
+      min-height: 100vh;
+      gap: 10px;
+    }
+    .container-article{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 800px;
+      
+             
+    }
+    .slider{
+      
+      opacity: 0;
+      transition: opacity 2s;
+      /* position: absolute; */
+      width: 100%;
+      padding: 20px;
+      display: none;
+      border-radius: 10px ;
+    }
+    .on{
+      display: block;
+      opacity: 1;
+    }
+/* Estilização dos botões */
+#prev-button, #next-button{
+  width: 50px;
+  height: 50px;
+  border:none;
+  background-color: transparent;
+  cursor: pointer;
+}
+#prev-button img, #next-button img{
+  width: 100%;
+  height: 100%;
+}
+
+/* #prev-button img{
+    transform: rotate(180deg);
+} */
+
+
+/* Animação do clique do botão */
+@keyframes click-animation {
+  0% {
+    /* Estilos iniciais */
+    transform: scale(1);
+  }
+  50% {
+    /* Estilos no meio da animação */
+    transform: scale(1.05);
+  }
+  100% {
+    /* Estilos finais */
+    transform: scale(1);
+  }
+}
+#prev-button img:active,#next-button img:active{
+    animation-name: click-animation;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-out;
+}
+
+

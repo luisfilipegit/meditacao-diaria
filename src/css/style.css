@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&family=Bungee+Spice&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+/* font-family: "Figtree,arial", sans-serif;*/
+@import url(./slider.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+body {
+    font-family: "Figtree", arial, sans-serif;
+    background-color: #3F8CC5;
+    color: #fff;
+
+}
+
+#container {
+    margin: 0 auto;
+}
+
+
+header {
+    width: 100%;
+    border: none;
+    background-color: #006498;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin: initial;
+    margin-bottom: 10px;
+    
+
+}
+
+.botao1 {
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 7px;
+    /*  position: absolute;
+    bottom: 425px;
+    left: 4px; */
+    width: 40px;
+    padding: 2px;
+}
+
+.botao1 img:hover {
+    transform: scale(1.2);
+    transition: transform 0.4s;
+}
+
+.botao1 img:active {
+    animation-name: click-animation;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-out;
+}
+
+
+header>h1 {
+    font-size: 2rem;
+    color: white;
+    font-weight: 700;
+
+
+}
+
+#apresentacao {
+
+    background-color: #3F8CC5;
+
+}
+
+p {
+    font-size: 1.7rem;
+    text-align: center;
+}
+
+article {
+    grid-column: 1;
+    /* border: 1px solid #006498; */
+    box-shadow: 8px 8px 2px #006498;
+    text-align: justify;
+    border-radius: 4px;
+    background-color: #62A1D7;
+    margin: 0 auto;
+}
+
+.liturgia {
+    text-decoration: none;
+    color: #c4c4cc;
+}
+
+.liturgia:hover {
+    text-decoration: underline;
+}
+
+
+h1 {
+    font-size: 2.1rem;
+    cursor: pointer;
+    color: #25313c;
+    letter-spacing: 2px;
+    line-height: 40px;
+    text-align: center;
+}
+
+#meditacao {
+
+    background-color: #3F8CC5;
+    text-align: justify;
+}
+
+
+
+ul>li {
+    font-size: 1.2rem;
+    list-style: none;
+}
+
+
+footer {
+    margin-top:10px ;
+    width: 100%;
+    justify-self: center;
+}
+
+footer li>a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer li a:hover {
+    color: #fdfdfd;
+    border-radius: 6px;
+    text-decoration: underline;
+
+}
+
+.rodape {
+    background-color: #006498;
+}
+
+footer ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 40px;
+
+}
+
+footer ul li {
+    font-size: 0.7rem;
+}
+
+@media (max-width:500px) {
+    .slider{
+        padding: 15px;
+    }
+   .slider > p {
+    font-size: 1rem;
+    font-weight: bold;
+}
+    h1 {
+        font-size:1.7rem ;
+    }
+    .container-article{
+        width: 90%;
+    }
+    #prev-button{
+        display: none;
+    }
+    .container-slider {
+        flex-direction: column;
+
+    }
+}
+
+@media (max-width:362px) {
+
+    .container-slider {
+        flex-direction: column;
+
+    }
+    #prev-button{
+        display: none;
+    }
+
+
+    .grid-container {
+        overflow: hidden;
+    }
+
+    .slider {
+        width: 90vw;
+    }
+
+    .slider>p {
+        font-size: 1.3rem;
+    }
+
+    .container_final {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: -10vh;
+    }
+}
