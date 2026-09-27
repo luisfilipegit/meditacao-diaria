@@ -8,9 +8,49 @@
   <link rel="shortcut icon" href="./src/assets/img/rezar.png" type="image/x-icon">
   <title>Meditação</title>
   <script src="./src/js/slider-Script.js" defer></script>
+  <script src="./src/js/auth.js" defer></script>
 </head>
 
 <body>
+  <!-- Tela de Login -->
+<div id="login-screen" class="screen">
+  <div class="card-login">
+    <h2>Login CrismApp</h2>
+    <input type="text" id="username" placeholder="Nome do Catequisando">
+    <input type="password" id="password" placeholder="Senha">
+    <button onclick="handleAuth()" class="btn-primary">Entrar / Cadastrar</button>
+    <p id="login-error" style="color: #ff4d4d; display: none;"></p>
+  </div>
+</div>
+
+<!-- Tela de Perfil (Dashboard) -->
+<div id="profile-screen" class="screen" style="display: none;">
+  <div class="card-profile">
+    <h2>Meu Perfil</h2>
+    <p>Bem-vindo(a), <strong id="user-display-name"></strong>!</p>
+    
+    <div class="stats-container">
+      <div class="stat-box">
+        <span class="stat-icon">🔥</span>
+        <h3>Constância (Streak)</h3>
+        <p><strong id="streak-count">0</strong> dias seguidos</p>
+      </div>
+      <div class="stat-box">
+        <span class="stat-icon">➕</span>
+        <h3>Total Realizado</h3>
+        <p><strong id="total-count">0</strong><br>meditações </p>
+      </div>
+    </div>
+
+    <button id="start-meditation-btn" onclick="startMeditation()" class="btn-primary">Iniciar Meditação de Hoje</button>
+    <p id="daily-message" style="color: #fdfdfd; font-weight: bold; display: none;"> Parabéns Você já completou sua meditação diária. Volte amanhã!</p>
+    <br><br>
+    <button onclick="logout()" class="btn-secondary">Sair da Conta</button>
+  </div>
+</div>
+
+<!-- Tela de Meditação (O SEU SLIDER ATUAL FICA AQUI DENTRO) -->
+<div id="meditation-screen" class="screen" style="display: none;">
   <div class="grid-container" id="container">
 
     <!--inicio do topo-->
@@ -19,6 +59,10 @@
     </header>
 
     <!--Fim do topo-->
+
+    <!-- Indicador de Progresso -->
+    
+
     <!--Inicio Slider-->
     <div class="container-slider">
       <!--Inicio Apresentação-->
@@ -28,7 +72,12 @@
       
 
       <div class="container-article">
-
+        <div id="progress-container">
+      <span id="progress-text"></span>
+      <div id="progress-bar">
+        <div id="progress-fill"></div>
+      </div>
+    </div>
         <main id="apresentacao">
           <article class="slider on">
             <h1>Apresentação</h1>
@@ -513,6 +562,9 @@
             <h1 style="color: rgb(251, 255, 0);">
               😮PARABÉNS!🥳🎉 você chegou no final da meditação e acaba de dar mais um passo na direção do céu, Deus te abençoe, até amanhã.👋😇
             </h1>
+            <div id="finish-container" style="display: none; text-align: center; margin-top: 20px;">
+    <button onclick="finishMeditation()" class="btn-primary">Concluir Meditação 🎉</button>
+  </div>
           </article>
 
         </main>
@@ -539,9 +591,8 @@
       </ul>
     </footer>
   </div>
+ 
+  
+</div>
 </body>
-
-
 </html>
-
-
